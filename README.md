@@ -14,6 +14,9 @@ and I assume other languages that compile to WASM support the config as well. Ru
 the obvious caveat when doing this is that you're reducing isolation between module instances, however this may be a
 desired trade-off in certain high performance situations where copies are unacceptable.
 
+the bigger caveat is that `--import-memory` disables the module's memory export, which [breaks WASI compatibility](https://github.com/bytecodealliance/wasmtime/issues/4985);
+so this only works with the `wasm32-unknown-unknown` target.
+
 # Usage
 
 run `make` in the project root. A small native binary will load an WASM three times. The module has two functions
