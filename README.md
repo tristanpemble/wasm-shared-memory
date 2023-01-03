@@ -1,5 +1,7 @@
 # wasm-shared-memory
 
+while this does "work", it will end in memory corruption as your two WASM modules allocate over each other.
+
 # Explanation
 
 this is just a proof of concept of how to share memory between WASM module instantiations with Rust and Wasmtime. a
